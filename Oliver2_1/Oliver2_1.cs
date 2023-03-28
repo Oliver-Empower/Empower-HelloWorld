@@ -49,16 +49,15 @@ dd/mm/2023	1.0.0.1		XXX, Skyline	Initial version
 ****************************************************************************
 */
 
-namespace HelloWorldDataminer_1
+namespace Oliver2_1
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Globalization;
 	using System.Text;
+	using Empower.Library.Room2;
 	using Skyline.DataMiner.Automation;
-	using Skyline.DataMiner.Core.DataMinerSystem.Automation;
-	using Skyline.DataMiner.Core.DataMinerSystem.Common;
-
+	
 	/// <summary>
 	/// Represents a DataMiner Automation script.
 	/// </summary>
@@ -70,15 +69,8 @@ namespace HelloWorldDataminer_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			engine.GenerateInformation("Hello Oliver! This is a push test");
-
-			IDms thisDms = engine.GetDms();
-			var elements = thisDms.GetElements();
-
-			foreach (var element in elements )
-			{
-				engine.GenerateInformation(element.Name);
-			}
+			var order = OrderFactory.CreateOrder("Order Oliver");
+			order.Dispatch("Oliver Wilkinson");
 		}
 	}
 }
