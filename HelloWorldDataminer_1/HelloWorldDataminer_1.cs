@@ -68,7 +68,7 @@ namespace HelloWorldDataminer_1
 		/// <param name="engine">Link with SLAutomation process.</param>
 		public void Run(IEngine engine)
 		{
-			engine.GenerateInformation("Hello Oliver!");
+			engine.GenerateInformation("Hello Oliver! This is a push test");
 		}
 	}
 }
